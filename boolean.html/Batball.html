@@ -1,0 +1,84 @@
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>batball</title>
+    <link rel="stylesheet" href="batball.css">
+</head>
+<body>
+  <h1>Bat Ball Stump Game</h1> 
+  <button onclick="
+  let randomNumber = math.random()*3;
+  let computerchoice;
+
+
+  if(randomNumber>0  && randomNumber <=1){
+     computerchoice = 'Bat'
+   // console.log('computer choice is Bat');
+  }else if(randomNumber> 1 && randomNumber<=2){
+     computerchoice = 'Ball';
+   // console.log('computer choice is Ball');
+  }else{
+     computerchoice = 'Stump'
+   // console.log('computer choice is Stump');
+  }
+  const computerChoiceMsg= 'computer choice is ${computerchoice}';
+
+  let resultMsg;
+
+  if(computerchoice === 'Ball'){
+    resultMsg='user won'; 
+  }else if(computerchoice ==='Bat'){
+    resultMsg=`It's tie`;
+  }else if (computerchoice ==='Stump'){
+    resultMsg='computer has won';
+  }
+
+  alert('you have chosen Bat.computer choice is ${computerChoiceMsg} ${resultMsg}');
+
+
+  ">Bat</button> 
+
+  <button>Ball</button> 
+  <button>Stump</button> 
+
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Bat Ball Stump Game</title>
+    <link rel="stylesheet" href="batball.css">
+</head>
+<body>
+  <h1>Bat Ball Stump Game</h1> 
+  <button onclick="playGame('Bat')">Bat</button>
+  <button onclick="playGame('Ball')">Ball</button>
+  <button onclick="playGame('Stump')">Stump</button> 
+
+  <script>
+    function playGame(userChoice) {
+      let randomNumber = Math.random() * 3;
+      let computerChoice;
+
+      if (randomNumber >= 0 && randomNumber < 1) {
+        computerChoice = 'Bat';
+      } else if (randomNumber >= 1 && randomNumber < 2) {
+        computerChoice = 'Ball';
+      } else {
+        computerChoice = 'Stump';
+      }
+
+      let resultMsg;
+      if (computerChoice === 'Ball' && userChoice === 'Bat') {
+        resultMsg = 'user won';
+      } else if (computerChoice === userChoice) {
+        resultMsg = "It's a tie";
+      } else {
+        resultMsg = 'computer has won';
+      }
+
+      alert(`You have chosen ${userChoice}. Computer choice is ${computerChoice}. ${resultMsg}`);
+    }
+  </script>
+</body>
+</html>
